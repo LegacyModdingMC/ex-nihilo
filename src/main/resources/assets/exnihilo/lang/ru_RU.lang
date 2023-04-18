@@ -76,7 +76,7 @@ exnihilo.seed_grass.name=Семена травы
 exnihilo.stone.name=Камень
 exnihilo.porcelain.name=Фарфоровая глина
 exnihilo.silkworm_cooked.name=Приготовленный тутовый шелкопряд
-exnihilo.crook_bone.name=Костный посох
+exnihilo.crook_bone.name=Костяной посох
 
 exnihilo.iron_broken.name=Разбитая железная руда
 exnihilo.iron_crushed.name=Измельчённая железная руда
@@ -127,11 +127,11 @@ exnihilo.ender_lead_broken.name=Разбитая свинцовая руда
 exnihilo.ender_silver_broken.name=Разбитая серебряная руда
 exnihilo.ender_platinum_broken.name=Разбитая платиновая руда
 
-exnihilo.seed_acacia.name=Семена акации
+exnihilo.seed_acacia.name=Семя акации
 exnihilo.seed_oak.name=Жёлудь
-exnihilo.seed_birch.name=Семена берёзы
-exnihilo.seed_spruce.name=Семена ели
-exnihilo.seed_jungle.name=Экзотические семена
+exnihilo.seed_birch.name=Семя берёзы
+exnihilo.seed_spruce.name=Семя ели
+exnihilo.seed_jungle.name=Экзотическое семя
 exnihilo.seed_cactus.name=Семена кактуса
 exnihilo.seed_sugar_cane.name=Семена тростника
 exnihilo.seed_carrot.name=Семена моркови
