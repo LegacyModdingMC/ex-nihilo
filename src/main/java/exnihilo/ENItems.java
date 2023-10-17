@@ -1,9 +1,6 @@
 package exnihilo;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import exnihilo.data.ItemData;
-import exnihilo.items.crooks.CrookType;
-import exnihilo.items.crooks.ItemCrook;
 import exnihilo.items.ItemGrassSeeds;
 import exnihilo.items.ItemMesh;
 import exnihilo.items.ItemPorcelainBall;
@@ -11,14 +8,13 @@ import exnihilo.items.ItemSilkworm;
 import exnihilo.items.ItemSilkwormCooked;
 import exnihilo.items.ItemSpores;
 import exnihilo.items.ItemStone;
+import exnihilo.items.crooks.CrookType;
+import exnihilo.items.crooks.ItemCrook;
 import exnihilo.items.dolls.ItemDoll;
 import exnihilo.items.dolls.ItemDollAngry;
 import exnihilo.items.dolls.ItemDollCreepy;
-import exnihilo.items.hammers.ItemHammerDiamond;
-import exnihilo.items.hammers.ItemHammerGold;
-import exnihilo.items.hammers.ItemHammerIron;
-import exnihilo.items.hammers.ItemHammerStone;
-import exnihilo.items.hammers.ItemHammerWood;
+import exnihilo.items.hammers.HammerType;
+import exnihilo.items.hammers.ItemHammer;
 import exnihilo.items.seeds.ItemSeedAcacia;
 import exnihilo.items.seeds.ItemSeedBirch;
 import exnihilo.items.seeds.ItemSeedCactus;
@@ -97,16 +93,16 @@ public class ENItems {
   public static Item IceShard;
 
   public static void registerItems() {
-    HammerWood = new ItemHammerWood();
-    GameRegistry.registerItem(HammerWood, ItemData.HAMMER_UNLOCALIZED_NAMES[0]);
-    HammerStone = new ItemHammerStone();
-    GameRegistry.registerItem(HammerStone, ItemData.HAMMER_UNLOCALIZED_NAMES[1]);
-    HammerIron = new ItemHammerIron();
-    GameRegistry.registerItem(HammerIron, ItemData.HAMMER_UNLOCALIZED_NAMES[2]);
-    HammerGold = new ItemHammerGold();
-    GameRegistry.registerItem(HammerGold, ItemData.HAMMER_UNLOCALIZED_NAMES[3]);
-    HammerDiamond = new ItemHammerDiamond();
-    GameRegistry.registerItem(HammerDiamond, ItemData.HAMMER_UNLOCALIZED_NAMES[4]);
+    HammerWood = new ItemHammer(HammerType.WOOD);
+    GameRegistry.registerItem(HammerWood, HammerType.WOOD.getName());
+    HammerStone = new ItemHammer(HammerType.STONE);
+    GameRegistry.registerItem(HammerStone, HammerType.STONE.getName());
+    HammerIron = new ItemHammer(HammerType.IRON);
+    GameRegistry.registerItem(HammerIron, HammerType.IRON.getName());
+    HammerGold = new ItemHammer(HammerType.GOLD);
+    GameRegistry.registerItem(HammerGold, HammerType.GOLD.getName());
+    HammerDiamond = new ItemHammer(HammerType.DIAMOND);
+    GameRegistry.registerItem(HammerDiamond, HammerType.DIAMOND.getName());
     CrookWood = new ItemCrook(CrookType.WOOD);
     GameRegistry.registerItem(CrookWood, "crook_wood");
     CrookStone = new ItemCrook(CrookType.STONE);
