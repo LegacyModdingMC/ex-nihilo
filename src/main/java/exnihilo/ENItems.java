@@ -104,7 +104,7 @@ public class ENItems {
     HammerDiamond = new ItemHammer(HammerType.DIAMOND);
     GameRegistry.registerItem(HammerDiamond, HammerType.DIAMOND.getName());
     CrookWood = new ItemCrook(CrookType.WOOD);
-    GameRegistry.registerItem(CrookWood, "crook_wood");
+    GameRegistry.registerItem(CrookWood, "crook");
     CrookStone = new ItemCrook(CrookType.STONE);
     GameRegistry.registerItem(CrookStone, "crook_stone");
     CrookIron = new ItemCrook(CrookType.IRON);
