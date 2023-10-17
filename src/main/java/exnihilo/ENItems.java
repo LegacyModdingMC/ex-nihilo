@@ -2,8 +2,8 @@ package exnihilo;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import exnihilo.data.ItemData;
-import exnihilo.items.ItemCrook;
-import exnihilo.items.ItemCrookBone;
+import exnihilo.items.crooks.CrookType;
+import exnihilo.items.crooks.ItemCrook;
 import exnihilo.items.ItemGrassSeeds;
 import exnihilo.items.ItemMesh;
 import exnihilo.items.ItemPorcelainBall;
@@ -42,7 +42,15 @@ public class ENItems {
 
   public static Item HammerDiamond;
 
-  public static Item Crook;
+  public static Item CrookWood;
+
+  public static Item CrookStone;
+
+  public static Item CrookIron;
+
+  public static Item CrookGold;
+
+  public static Item CrookDiamond;
 
   public static Item CrookBone;
 
@@ -99,9 +107,17 @@ public class ENItems {
     GameRegistry.registerItem(HammerGold, ItemData.HAMMER_UNLOCALIZED_NAMES[3]);
     HammerDiamond = new ItemHammerDiamond();
     GameRegistry.registerItem(HammerDiamond, ItemData.HAMMER_UNLOCALIZED_NAMES[4]);
-    Crook = new ItemCrook();
-    GameRegistry.registerItem(Crook, "crook");
-    CrookBone = new ItemCrookBone();
+    CrookWood = new ItemCrook(CrookType.WOOD);
+    GameRegistry.registerItem(CrookWood, "crook_wood");
+    CrookStone = new ItemCrook(CrookType.STONE);
+    GameRegistry.registerItem(CrookStone, "crook_stone");
+    CrookIron = new ItemCrook(CrookType.IRON);
+    GameRegistry.registerItem(CrookIron, "crook_iron");
+    CrookGold = new ItemCrook(CrookType.GOLD);
+    GameRegistry.registerItem(CrookGold, "crook_gold");
+    CrookDiamond = new ItemCrook(CrookType.DIAMOND);
+    GameRegistry.registerItem(CrookDiamond, "crook_diamond");
+    CrookBone = new ItemCrook(CrookType.BONE);
     GameRegistry.registerItem(CrookBone, "crook_bone");
     Silkworm = new ItemSilkworm();
     GameRegistry.registerItem(Silkworm, "silkworm");
