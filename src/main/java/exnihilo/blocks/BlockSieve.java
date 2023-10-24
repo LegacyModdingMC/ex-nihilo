@@ -119,6 +119,8 @@ public class BlockSieve extends BlockContainer {
                 removeCurrentItem(player);
                 return true;
             }
+            if (sieve.getMeshType() == MeshType.NONE)
+                return true;
             ArrayList<SiftingResult> result = SieveRegistry.getSiftingOutput(new ItemInfo(held), sieve.getMeshType());
             if (result != null) {
                     outerloop:
