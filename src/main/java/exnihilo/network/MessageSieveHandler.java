@@ -18,7 +18,7 @@ public class MessageSieveHandler implements IMessageHandler<MessageSieve, IMessa
         World world = (Minecraft.getMinecraft()).thePlayer.worldObj;
         if (world.getTileEntity(message.x, message.y, message.z) != null) {
             TileEntitySieve te = (TileEntitySieve) world.getTileEntity(message.x, message.y, message.z);
-            te.setMeshType(MeshType.values()[message.meshType]);
+            te.setMeshType(MeshType.getValues()[message.meshType]);
             te.setProgress(message.progress);
             Block block = (Block) Block.blockRegistry.getObject(message.blockName);
             if (block == Blocks.air) {

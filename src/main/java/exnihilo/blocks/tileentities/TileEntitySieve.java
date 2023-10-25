@@ -1,5 +1,6 @@
 package exnihilo.blocks.tileentities;
 
+import exnihilo.data.ModData;
 import exnihilo.items.meshes.MeshType;
 import exnihilo.network.ENPacketHandler;
 import exnihilo.network.MessageSieve;
@@ -33,7 +34,11 @@ public class TileEntitySieve extends TileEntity {
     private float progress = 0;
     private long lastSieveAction = 0;
 
-    public TileEntitySieve() {}
+    public TileEntitySieve() {
+        if (ModData.LEGACY_SIEVE) {
+            this.meshType = MeshType.SILK;
+        }
+    }
 
     public void addSievable(Block block, int blockMeta) {
         if (meshType == MeshType.NONE || currentStack != BlockInfo.EMPTY)
@@ -105,7 +110,7 @@ public class TileEntitySieve extends TileEntity {
         super.readFromNBT(compound);
         if (compound.hasKey("stack"))
             this.currentStack = BlockInfo.readFromNBT(compound.getCompoundTag("stack"));
-        this.meshType = MeshType.values()[compound.getShort("mesh")];
+        this.meshType = MeshType.getValues()[compound.getShort("mesh")];
         this.progress = compound.getFloat("progress");
     }
 

@@ -118,7 +118,7 @@ public class RecipeHandlerSieve extends TemplateRecipeHandler {
   @Override
   public void loadCraftingRecipes(String outputID, Object... results) {
     if (outputID.equals("exnihilo.sieve")) {
-        for (MeshType meshType : MeshType.values()) {
+        for (MeshType meshType : MeshType.getValues()) {
             if (meshType == MeshType.NONE)
                 continue;
             for (ItemInfo ii : SieveRegistry.getSiftables().get(meshType).keySet()) {
@@ -162,7 +162,7 @@ public class RecipeHandlerSieve extends TemplateRecipeHandler {
   public void loadUsageRecipes(ItemStack ingredient) {
       if (Block.getBlockFromItem(ingredient.getItem()) == Blocks.air)
           return;
-      for (MeshType meshType : MeshType.values()) {
+      for (MeshType meshType : MeshType.getValues()) {
           HashMap<ItemInfo, Integer> stored = new HashMap<>();
           if (!SieveRegistry.registered(Block.getBlockFromItem(ingredient.getItem()), ingredient.getItemDamage(), meshType))
               continue;

@@ -47,7 +47,7 @@ public class BlockSieve extends BlockContainer {
 
     @Override
     public void registerBlockIcons(IIconRegister register) {
-        for (MeshType mesh : MeshType.values()) {
+        for (MeshType mesh : MeshType.getValues()) {
             mesh.registerMeshRenderIcon(register);
         }
         this.blockIcon = Blocks.planks.getIcon(0, 0);
@@ -105,11 +105,14 @@ public class BlockSieve extends BlockContainer {
             return true;
 
         ItemStack held = player.getCurrentEquippedItem();
-        if (held == null && sieve.getMeshType() != MeshType.NONE && player.isSneaking() && sieve.getCurrentStack() == BlockInfo.EMPTY) {
-            EntityItem entityItem = new EntityItem(world, sieve.xCoord + 0.5D, sieve.yCoord + 1.5D, sieve.zCoord + 0.5D, new ItemStack(MeshType.getItemForType(sieve.getMeshType()), 1, 0));
-            sieve.setMeshType(MeshType.NONE);
-            world.spawnEntityInWorld(entityItem);
-            return true;
+
+        if (!ModData.LEGACY_SIEVE) {
+            if (held == null && sieve.getMeshType() != MeshType.NONE && player.isSneaking() && sieve.getCurrentStack() == BlockInfo.EMPTY) {
+                EntityItem entityItem = new EntityItem(world, sieve.xCoord + 0.5D, sieve.yCoord + 1.5D, sieve.zCoord + 0.5D, new ItemStack(MeshType.getItemForType(sieve.getMeshType()), 1, 0));
+                sieve.setMeshType(MeshType.NONE);
+                world.spawnEntityInWorld(entityItem);
+                return true;
+            }
         }
 
         if (sieve.getCurrentStack() == BlockInfo.EMPTY && held != null) {

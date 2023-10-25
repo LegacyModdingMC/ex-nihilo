@@ -27,7 +27,7 @@ public class SieveRegistry {
     private static final HashMap<MeshType, HashMap<ItemInfo, ArrayList<SiftingResult>>> siftables = new HashMap<>();
 
     static {
-        for (MeshType meshType : MeshType.values()) {
+        for (MeshType meshType : MeshType.getValues()) {
             if (meshType == MeshType.NONE)
                 continue;
             siftables.put(meshType, new HashMap<>());
@@ -55,7 +55,7 @@ public class SieveRegistry {
     }
 
     public static void register(Block source, int sourceMeta, Item output, int outputMeta, int rarity) {
-        for (MeshType meshType : MeshType.values()) {
+        for (MeshType meshType : MeshType.getValues()) {
             register(source, sourceMeta, output, outputMeta, rarity, meshType);
         }
     }
@@ -65,7 +65,7 @@ public class SieveRegistry {
     }
 
     public static void register(Block source, Item output, int outputMeta, int rarity) {
-        for (MeshType meshType : MeshType.values()) {
+        for (MeshType meshType : MeshType.getValues()) {
             register(source, output, outputMeta, rarity, meshType);
         }
     }
@@ -101,7 +101,7 @@ public class SieveRegistry {
     }
 
     public static void unregisterReward(Block block, int meta, Item output, int outputMeta) {
-        for (MeshType meshType : MeshType.values()) {
+        for (MeshType meshType : MeshType.getValues()) {
             if (meshType == MeshType.NONE)
                 continue;
             unregisterReward(block, meta, output, outputMeta, meshType);
@@ -109,7 +109,7 @@ public class SieveRegistry {
     }
 
     public static void unregisterRewardFromAllBlocks(Item output, int outputMeta) {
-        for (MeshType meshType : MeshType.values()) {
+        for (MeshType meshType : MeshType.getValues()) {
             if (meshType == MeshType.NONE)
                 continue;
             for (ItemInfo iteminfo : siftables.get(meshType).keySet())
@@ -118,7 +118,7 @@ public class SieveRegistry {
     }
 
     public static void unregisterAllRewardsFromBlock(Block block, int meta) {
-        for (MeshType meshType : MeshType.values()) {
+        for (MeshType meshType : MeshType.getValues()) {
             if (meshType == MeshType.NONE)
                 continue;
             siftables.get(meshType).remove(new ItemInfo(block, meta));
@@ -197,7 +197,7 @@ public class SieveRegistry {
 
     public static HashMap<MeshType, ArrayList<ItemInfo>> getSources(ItemStack reward) {
         HashMap<MeshType, ArrayList<ItemInfo>> res = new HashMap<>();
-        for (MeshType meshType : MeshType.values()) {
+        for (MeshType meshType : MeshType.getValues()) {
             if (meshType == MeshType.NONE)
                 continue;
             res.put(meshType, new ArrayList<>());

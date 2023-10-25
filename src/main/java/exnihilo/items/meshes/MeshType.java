@@ -1,6 +1,7 @@
 package exnihilo.items.meshes;
 
 import exnihilo.ENItems;
+import exnihilo.data.ModData;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
@@ -45,5 +46,21 @@ public enum MeshType {
             default:
                 return null;
         }
+    }
+
+    public static MeshType[] getValues() {
+        if (ModData.LEGACY_SIEVE) {
+            MeshType[] res = new MeshType[2];
+            res[0] = NONE;
+            res[1] = SILK;
+            return res;
+        }
+        MeshType[] res = new MeshType[5];
+        res[0] = NONE;
+        res[1] = SILK;
+        res[2] = FLINT;
+        res[3] = IRON;
+        res[4] = DIAMOND;
+        return res;
     }
 }
